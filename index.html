@@ -163,6 +163,24 @@
                         </aside>
                     </section>
 
+                    <section data-slide-name="callback_search">
+                        <pre><code>
+    var lastRequest;
+
+    $("#search").keyup(function() {
+        var query = $(this).val();
+
+        if (lastRequest) {
+            lastRequest.cancel();
+        }
+
+        lastRequest = makeAnAjaxRequest(query, function(results) {
+            displayResults(results);
+        });
+    });
+                        </code></pre>
+                    </section>
+
                     <section data-background="#111011" data-autoslide="13000">
                         <video width="800" height="450" data-autoplay>
                             <source data-src="assets/a-better-way.webm" />
@@ -540,7 +558,7 @@
                         <pre><code>
     function inputVal(e) { return $(e.currentTarget).val(); }
 
-    var query = $("#search").asEventStream().map(inputVal);
+    var query = $("#search").asEventStream("keyup").map(inputVal);
                         </code></pre>
 
                         <label for="search"> Search: </label>
@@ -561,7 +579,7 @@
 
     function inputVal(e) { return $(e.currentTarget).val(); }
 
-    var query = $("#search").asEventStream().map(inputVal);
+    var query = $("#search").asEventStream("keyup").map(inputVal);
 
     var search = query.map(ajaxStream);
                         </code></pre>
@@ -584,7 +602,7 @@
 
     function inputVal(e) { return $(e.currentTarget).val(); }
 
-    var query = $("#search").asEventStream().map(inputVal);
+    var query = $("#search").asEventStream("keyup").map(inputVal);
 
     var search = query.flatMapLatest(ajaxStream);
                         </code></pre>
@@ -629,6 +647,7 @@
 
                     <ul> 
                         <li> Bacon.js - <a href="https://baconjs.github.io"> https://baconjs.github.io </a> </li>
+                        <li> Elm <a href="http://elm-lang.org"> http://elm-lang.org </a> </li>
                         <li> Slides - <a href="https://github.com/davesilva/frp-talk"> https://github.com/davesilva/frp-talk </a> </li>
                     </ul>
                 </section>
