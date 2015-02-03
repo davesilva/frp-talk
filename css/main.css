@@ -1,0 +1,20 @@
+/* Ensure that text input height matches the line-height of the text */
+input[type="text"] {
+    height: 1.2em;
+    padding: 2px;
+    border: 1px solid #ddd;
+    font: 1em/1.2 "Helvetica neue", Arial, sans-serif;
+}
+
+input[type="text"].add {
+    width: 5em;
+}
+
+button {
+    font: 1em/1.2 "Helvetica neue", Arial, sans-serif;
+}
+
+.viz {
+    margin-bottom: 50px;;
+    height: 500px;
+}
