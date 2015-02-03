@@ -129,67 +129,9 @@ window.slideShown["counting_7"] = function($this) {
     sum.visualize("");
 };
 
-/*************************
-  Calculator Example
- *************************/
 function inputVal(e) {
     return $(e.currentTarget).val();
 }
-
-function sum(a, b) { return a + b; }
-
-window.slideShown["calc_1"] = function($this) {
-    var a = $this.find(".a").asEventStream("keyup")
-                            .map(inputVal);
-
-    var b = $this.find(".b").asEventStream("keyup")
-                            .map(inputVal);
-
-    a.visualize();
-    b.visualize();
-};
-
-window.slideShown["calc_2"] = function($this) {
-    var a = $this.find(".a").asEventStream("keyup")
-                            .map(inputVal).map(parseInt);
-
-    var b = $this.find(".b").asEventStream("keyup")
-                            .map(inputVal).map(parseInt);
-
-    a.visualize();
-    b.visualize();
-};
-
-window.slideShown["calc_3"] = function($this) {
-    var a = $this.find(".a").asEventStream("keyup")
-                            .map(inputVal).map(parseInt).filter($.isNumeric)
-                            .toProperty(0);
-
-    var b = $this.find(".b").asEventStream("keyup")
-                            .map(inputVal).map(parseInt).filter($.isNumeric)
-                            .toProperty(0);
-
-    a.visualize();
-    b.visualize();
-};
-
-window.slideShown["calc_4"] = function($this) {
-    var a = $this.find(".a").asEventStream("keyup")
-                            .map(inputVal).map(parseInt).filter($.isNumeric)
-                            .toProperty(0);
-
-    var b = $this.find(".b").asEventStream("keyup")
-                            .map(inputVal).map(parseInt).filter($.isNumeric)
-                            .toProperty(0);
-
-    var answer = a.combine(b, sum);
-
-    answer.assign($this.find(".c"), "val");
-
-    a.visualize();
-    b.visualize();
-    answer.visualize();
-};
 
 window.slideShown["search_1"] = function($this) {
     $this.find(".reset").click(function() {

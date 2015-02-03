@@ -503,98 +503,6 @@
                     </section>
                 </section>
 
-                <section data-background="#ffd29f">
-                    <section data-slide-name="calc_1">
-                        <pre><code>
-    function inputVal(e) { return $(e.currentTarget).val(); }
-
-    var a = $("#a").asEventStream("keyup")
-                   .map(inputVal);
-
-    var b = $("#b").asEventStream("keyup")
-                   .map(inputVal);
-                        </code></pre>
-
-                        <input type="text" class="add a" /> +
-                        <input type="text" class="add b" /> =
-                        <input type="text" class="add c" />
-                        <div class="viz"></div>
-
-                        <aside class="notes">
-
-                        </aside>
-                    </section>
-
-                    <section data-slide-name="calc_2">
-                        <pre><code>
-    function inputVal(e) { return $(e.currentTarget).val(); }
-
-    var a = $("#a").asEventStream("keyup")
-                   .map(inputVal).map(parseInt);
-
-    var b = $("#b").asEventStream("keyup")
-                   .map(inputVal).map(parseInt);
-                        </code></pre>
-
-                        <input type="text" class="add a" /> +
-                        <input type="text" class="add b" /> =
-                        <input type="text" class="add c" />
-                        <div class="viz"></div>
-
-                        <aside class="notes">
-
-                        </aside>
-                    </section>
-
-                    <section data-slide-name="calc_3">
-                        <pre><code>
-    function inputVal(e) { return $(e.currentTarget).val(); }
-
-    var a = $("#a").asEventStream("keyup")
-                   .map(inputVal).map(parseInt).filter($.isNumeric);
-
-    var b = $("#b").asEventStream("keyup")
-                   .map(inputVal).map(parseInt).filter($.isNumeric);
-                        </code></pre>
-
-                        <input type="text" class="add a" /> +
-                        <input type="text" class="add b" /> =
-                        <input type="text" class="add c" />
-                        <div class="viz"></div>
-
-                        <aside class="notes">
-
-                        </aside>
-                    </section>
-
-                    <section data-slide-name="calc_4">
-                        <pre><code>
-    function inputVal(e) { return $(e.currentTarget).val(); }
-
-    var a = $("#a").asEventStream("keyup")
-                   .map(inputVal).map(parseInt).filter($.isNumeric);
-
-    var b = $("#b").asEventStream("keyup")
-                   .map(inputVal).map(parseInt).filter($.isNumeric);
-
-    function sum(a, b) { return a + b; }
-
-    var answer = a.combine(b, sum);
-
-    answer.assign($("#sum"), "val");
-                        </code></pre>
-
-                        <input type="text" class="add a" /> +
-                        <input type="text" class="add b" /> =
-                        <input type="text" class="add c" />
-                        <div class="viz"></div>
-
-                        <aside class="notes">
-
-                        </aside>
-                    </section>
-                </section>
-
                 <section data-background="#9f75b5">
                     <section data-slide-name="callback_search">
                         <h2> Search Part Deux </h2>
@@ -717,6 +625,8 @@
                 </section>
 
                 <section>
+                    <h2> More Info </h2>
+
                     <ul> 
                         <li> Bacon.js - <a href="https://baconjs.github.io"> https://baconjs.github.io </a> </li>
                         <li> Slides - <a href="https://github.com/davesilva/frp-talk"> https://github.com/davesilva/frp-talk </a> </li>
